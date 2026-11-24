@@ -86,7 +86,7 @@ class PoolRenderer : GLSurfaceView.Renderer {
     fun shoot(){ val cue=balls.firstOrNull{it.number==0} ?: return; cue.vx=sin(angle)*1.55f*power; cue.vz=-cos(angle)*1.55f*power }
     private fun resetBalls(){
         balls.clear()
-        balls.add(Ball(0f,.62f,color(0.94f,.94f,.88f),0))
+        balls.add(Ball(0f,.62f,color=color(0.94f,.94f,.88f),number=0))
         val palette=arrayOf(color(.95f,.78f,.12f),color(.12f,.2f,.75f),color(.85f,.12f,.12f),color(.45f,.12f,.58f),color(.95f,.48f,.08f),color(.1f,.55f,.3f),color(.45f,.2f,.1f))
         var n=1
         for(row in 0..3) for(col in 0..row) { val x=(col-row/2f)*radius*2.15f; balls.add(Ball(x,-.38f-row*radius*1.85f,color=palette[(n-1)%7],number=n)); n++ }
